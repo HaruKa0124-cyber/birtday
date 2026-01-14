@@ -1,26 +1,51 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  margin: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.birthday-body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff4d6d, #ff9a9e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial Black", sans-serif;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.container {
+  text-align: center;
+  color: white;
+}
+
+.line {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: show 1s forwards;
+  text-shadow: 0 0 20px rgba(255,255,255,0.8);
+  margin: 15px 0;
+}
+
+.delay1 { animation-delay: 0.5s; }
+.delay2 { animation-delay: 2s; }
+.delay3 { animation-delay: 3.5s; }
+.delay4 { animation-delay: 5s; }
+
+@keyframes show {
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.confetti::before {
+  content: "🎉 🎂 💖 ✨ 🎈 💕";
+  position: absolute;
+  font-size: 40px;
+  animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+  0% { top: -10%; left: 10%; opacity: 0; }
+  20% { opacity: 1; }
+  100% { top: 110%; left: 80%; opacity: 0; }
 }
