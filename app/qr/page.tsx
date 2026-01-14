@@ -18,7 +18,7 @@ export default function QRPage() {
         </h2>
 
         <QRCodeSVG
-          value="https://HaruKa0124-cyber.github.io/ https://haruka0124-cyber.github.io/birtday//"
+          value="https://haruka0124-cyber.github.io/birtday/"
           size={220}
           fgColor="#ff4d6d"
           bgColor="#ffffff"
